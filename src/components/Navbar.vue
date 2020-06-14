@@ -1,8 +1,10 @@
 <template>
   <div class="header">
     <img src="../assets/linux.svg" />
-    <h1>Linux</h1>
-    <menu-icon @click="changeStateSidebar" class="btnMenu" fillColor="#fff" />
+    <transition name="slide-fade">
+      <h1 v-show="this.$store.state.isOpenSidebar" >Linux</h1>
+    </transition>
+    <menu-icon @click="changeStateSidebar" class="btnMenu" :class="this.$store.state.isOpenSidebar && 'open-sidebar-effet'" fillColor="#fff" />
   </div>
 </template>
 
@@ -36,6 +38,17 @@ import MenuIcon from 'vue-material-design-icons/Menu.vue';
   position: absolute;
   z-index: 1049;
 
+  span{
+    position: absolute;
+    left: 56px;
+    transition: 1s;
+  }
+
+  .open-sidebar-effet{
+    left: 146px;
+    transition: 0.5s;
+  }
+  
   img{
     width: 48px;
     margin-right: 16px;
@@ -54,4 +67,5 @@ import MenuIcon from 'vue-material-design-icons/Menu.vue';
   }
 
 }
+
 </style>

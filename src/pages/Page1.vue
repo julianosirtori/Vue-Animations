@@ -17,10 +17,12 @@
   width: 100%;
   height: 100%;
   background: rgb(131, 131, 131);
+  transition: 0.5s;
 }
 
 .open-sidebar{
   padding-left: 248px;
+  transition: 0.5s;
 }
 
 
