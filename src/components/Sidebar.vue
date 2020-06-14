@@ -1,12 +1,13 @@
 <template>
-  <div class="sidebar">
+  <div class="sidebar" v-show="$store.state.isOpenSidebar">
     <h1>Sidebar</h1>
   </div>
 </template>
 
 <script>
   export default {
-    name: "Sidebar"
+    name: "Sidebar",
+    
   }
 </script>
 

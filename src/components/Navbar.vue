@@ -2,7 +2,7 @@
   <div class="header">
     <img src="../assets/linux.svg" />
     <h1>Linux</h1>
-    <menu-icon class="btnMenu" fillColor="#fff" />
+    <menu-icon @click="changeStateSidebar" class="btnMenu" fillColor="#fff" />
   </div>
 </template>
 
@@ -14,6 +14,11 @@ import MenuIcon from 'vue-material-design-icons/Menu.vue';
     name: "Navbar",
     components: {
       MenuIcon,
+    },
+    methods: {
+      changeStateSidebar() {
+        this.$store.commit('changeOpenSidebar');
+      }
     },
   }
 </script>
